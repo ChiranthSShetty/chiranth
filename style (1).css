@@ -1,0 +1,131 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    background-image: url("logo.png");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center center;
+}
+#icons-phone
+{   display:flex;
+    justify-content:space-between;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+#facebook,#instagram,#whatsapp,#linkdin{
+    font-size:30px;
+    margin-left:30px;
+    align-items: center;
+    padding-top:12px;
+    padding-bottom:15px;
+    padding-right:3px;
+    padding-left:3px;
+    transition-property:all;
+    transition-duration: 0.5s;
+}
+#facebook:hover,#instagram:hover,#whatsapp:hover,#linkdin:hover{
+    background-color:whitesmoke;
+    color:rgba(0, 128, 255, 0.552);
+}
+h3{
+    margin-left: 180px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #33333392;
+    overflow: hidden;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 14px 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5733;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #ff5733;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    background-image: url("https://img.freepik.com/free-photo/keyboard-notepad-flat-lay_23-2148475338.jpg?t=st=1717095645~exp=1717099245~hmac=f62566c75045ebc131c4d39234cc7de7f31ff0a1b8acb73534a31ffc19726ca8&w=900");
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+form {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#successMessage {
+    animation: successFadeIn 0.5s ease-in-out;
+}
+
+@keyframes successFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

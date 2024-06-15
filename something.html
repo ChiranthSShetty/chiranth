@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>program</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="program.css">
+</head>
+<body>
+    <div class="form-group">
+        <label for="course">Select Course</label>
+        <select class="form-control" id="course" required>
+            <option value="">Choose a course</option>
+            <option value="course1">COMPUTER SCIENCE ENGINEERING</option>
+            <option value="course2">ELECTRONICS AND COMMUNICATION ENGNINEERING</option>
+            <option value="course3">MECHANICAL ENGINEERING</option>
+            <option value="course3">CIVIL ENGINEERING</option>
+        </select>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Events</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <header>
+        <h1>College Events</h1>
+        <nav>
+            <ul>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="upcoming-events">
+            <h2>Upcoming Events</h2>
+            <div class="event-list">
+                <!-- Event items will be injected here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 College Name. All rights reserved.</p>
+    </footer>
+
+    <script src="events.js"></script>
+</body>
+</html>
+
+css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#upcoming-events h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.event {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(33% - 2rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event:hover {
+    transform: translateY(-5px);
+}
+
+.event h3 {
+    margin-top: 0;
+}
+
+.event p {
+    margin: 0.5rem 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+js
+document.addEventListener('DOMContentLoaded', function() {
+    const events = [
+        {
+            title: 'Spring Festival',
+            date: 'April 21, 2024',
+            description: 'Join us for a day of fun, food, and festivities at the annual Spring Festival!'
+        },
+        {
+            title: 'Tech Conference 2024',
+            date: 'May 15, 2024',
+            description: 'Learn about the latest advancements in technology from industry leaders.'
+        },
+        {
+            title: 'Art Exhibition',
+            date: 'June 10, 2024',
+            description: 'Explore the beautiful artworks created by our talented students.'
+        }
+    ];
+
+    const eventList = document.querySelector('.event-list');
+
+    events.forEach((event, index) => {
+        const eventItem = document.createElement('div');
+        eventItem.classList.add('event');
+        eventItem.style.animationDelay = `${index * 0.1}s`;
+
+        eventItem.innerHTML = `
+            <h3>${event.title}</h3>
+            <p><strong>Date:</strong> ${event.date}</p>
+            <p>${event.description}</p>
+        `;
+
+        eventList.appendChild(eventItem);
+    });
+});
+
